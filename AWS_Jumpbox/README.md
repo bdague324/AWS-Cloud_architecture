@@ -11,6 +11,9 @@
 - 2 Route tables (one for each subnet)
 - 3 Security groups (one for each instance)
 
+## Architecture
+*<insert photo here>*
+
 ## Steps to create the architecture:
 ### 1. VPC
 Create a VPC with <IP>/16 IPv4 CIDR block.
@@ -35,10 +38,10 @@ Create 2 Elastic IPs and assign each of them to the 2 instances in the public su
 ### 6. Route Tables
 Create 2 Route Tables:
 - Public Route Table associated to the public subnet:
-  Destination       |Target              |Status |Propagated        
-  ------------------|--------------------|-------|----------
-  *<VPC IPv4 CIDR>* |local               |active |No
-  0.0.0.0/0         |*<IGW id>*          |active |No
+  | Destination        |Target                |Status  |Propagated |      
+  | ------------------ |:--------------------:|-------:|----------:|
+  | *<VPC IPv4 CIDR>*  |local                 |active  |No         |
+  | 0.0.0.0/0          |*<IGW id>*            |active  |No         |
 
 - Private Route Table associated to the private subnet:
   Destination       |Target              |Status |Propagated        
@@ -91,14 +94,14 @@ Create 3 Security Groups and associate each one to its corresponding instance:
   ```
 - Copy *<KeyPair.pem>* file to Ubuntu home directory and then change directory
   ```
-  cp -i *<KeyPair.pem>* ~
+  cp -i <KeyPair.pem> ~
   cd ~
   ```
 - Use SSH-agent to allow instances to access *<KeyPair.pem>*
   ```
-  chmod 600 *<KeyPair.pem>*
+  chmod 600 <KeyPair.pem>
   eval `ssh-agent -s`
-  ssh-add *<KeyPair.pem>*
+  ssh-add <KeyPair.pem>
   ```
 - Connect to Jumpbox instance
   ```
