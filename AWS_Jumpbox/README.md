@@ -29,12 +29,15 @@ Create an Internet Gateway and attach it to the VPC.
 ### 4. EC2 instances
 Create 3 instances:
 - **Jumpbox** *(public)* type Amazon Linux 2 AMI HVM
+
 ![Jumpbox_instance](https://github.com/lisakoppe/AWS-Cloud_architecture/blob/master/AWS_Jumpbox/Screenshots/Jumpbox_instance.PNG)
 
 - **NAT instance** *(public)* amzn-ami-vpc-nat community AMI and disable Change Source/Dest. Check (Actions > Networking > Change Source/Dest. Check > Yes, Disable)
+
 ![NAT_instance](https://github.com/lisakoppe/AWS-Cloud_architecture/blob/master/AWS_Jumpbox/Screenshots/NAT_instance.PNG)
 
 - **Final Instance** *(private)* type Amazon Linux 2 AMI HVM
+
 ![Final_instance](https://github.com/lisakoppe/AWS-Cloud_architecture/blob/master/AWS_Jumpbox/Screenshots/FI_instance.PNG)
 
 ### 5. Elastic IPs
@@ -122,4 +125,6 @@ Create 3 Security Groups and associate each one to its corresponding instance:
   ```
   ping google.com
   ```
+Find script here:
+
 ![Ubuntu_console_screenshot](https://github.com/lisakoppe/AWS-Cloud_architecture/blob/master/AWS_Jumpbox/Screenshots/Ubuntu_console_screenshot.PNG)
