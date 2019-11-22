@@ -39,54 +39,61 @@ Create 2 Elastic IPs and assign each of them to the 2 instances in the public su
 Create 2 Route Tables:
 - Public Route Table associated to the public subnet:
 
-| Destination          | Target                 | Status   | Propagated  |      
-| -------------------- | ---------------------- | -------- | ----------- |
-| *<VPC IPv4 CIDR>*    | local                  | active   | No          |
-| 0.0.0.0/0            | *IGW id*               | active   | No          |
+| Destination        | Target                 | Status   | Propagated  |      
+| ------------------ | ---------------------- | -------- | ----------- |
+| `VPC IPv4 CIDR`    | local                  | active   | No          |
+| 0.0.0.0/0          | `IGW id`               | active   | No          |
 
 - Private Route Table associated to the private subnet:
-  Destination       |Target              |Status |Propagated        
-  ------------------|--------------------|-------|----------
-  *<VPC IPv4 CIDR>* |local               |active |No
-  0.0.0.0/0         |*<NAT instance id>* |active |No
+
+| Destination        | Target                 | Status   | Propagated  |        
+| ------------------ | ---------------------- | -------- | ----------- |
+| `VPC IPv4 CIDR`    | local                  | active   | No          |
+| 0.0.0.0/0          | `NAT instance id`      | active   | No          |
 
 ### 7. Security Groups
 Create 3 Security Groups and associate each one to its corresponding instance:
 - **Jumpbox Security Group**:
   - Inbound rules:
-    Type           |Protocol  |Port Range |Source      
-    ---------------|----------|-----------|------------------
-    SSH            |TCP       |22         |0.0.0.0/0
+
+| Type            | Protocol   | Port Range  | Source             |
+| --------------- | ---------- | ----------- | ------------------ |
+| SSH             | TCP        | 22          | 0.0.0.0/0          |
 
   - Outbound rules:
-    Type           |Protocol  |Port Range |Destination      
-    ---------------|----------|-----------|------------------
-    All traffic    |All       |All        |0.0.0.0/0
+
+| Type            | Protocol   | Port Range  | Destination        |
+| --------------- | ---------- | ----------- | ------------------ |
+| All traffic     | All        | All         | 0.0.0.0/0          |
 
 - **NAT instance Security Group**:
   - Inbound rules:
-    Type           |Protocol  |Port Range |Source      
-    ---------------|----------|-----------|------------------
-    SSH            |TCP       |22         |*<VPC IPv4 CIDR>*
-    HTTP           |TCP       |80         |*<VPC IPv4 CIDR>*
-    HTTPS          |TCP       |443        |*<VPC IPv4 CIDR>*
-    All ICMP-IPv4  |All       |N/A        |*<VPC IPv4 CIDR>*
+
+| Type            | Protocol   | Port Range  | Source             |
+| --------------- | ---------- | ----------- | ------------------ |
+| SSH             | TCP        | 22          | `VPC IPv4 CIDR`    |
+| HTTP            | TCP        | 80          | `VPC IPv4 CIDR`    |
+| HTTPS           | TCP        | 443         | `VPC IPv4 CIDR`    |
+| All ICMP-IPv4   | All        | N/A         | `VPC IPv4 CIDR`    |
 
   - Outbound rules:
-    Type           |Protocol  |Port Range |Destination      
-    ---------------|----------|-----------|------------------
-    All traffic    |All       |All        |0.0.0.0/0
+
+| Type            | Protocol   | Port Range  | Destination        |
+| --------------- | ---------- | ----------- | ------------------ |
+| All traffic     | All        | All         | 0.0.0.0/0          |
 
 - **Final Instance Security Group**:
   - Inbound rules:
-    Type           |Protocol  |Port Range |Source      
-    ---------------|----------|-----------|------------------
-    SSH            |TCP       |22         |*<VPC IPv4 CIDR>*
+
+| Type            | Protocol   | Port Range  | Source             |
+| --------------- | ---------- | ----------- | ------------------ |
+| SSH             | TCP        | 22          | `VPC IPv4 CIDR`    |
 
   - Outbound rules:
-    Type           |Protocol  |Port Range |Destination      
-    ---------------|----------|-----------|------------------
-    All traffic    |All       |All        |0.0.0.0/0
+
+| Type            | Protocol   | Port Range  | Destination        |
+| --------------- | ---------- | ----------- | ------------------ |
+| All traffic     | All        | All         | 0.0.0.0/0          |
 
 ## Test connection by pinging google.com on Ubuntu console:
 - Go to the local directory where *<KeyPair.pem>* is located
