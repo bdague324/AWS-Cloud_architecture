@@ -37,14 +37,14 @@ Create 2 Elastic IPs and assign each of them to the 2 instances in the public su
 
 ### 6. Route Tables
 Create 2 Route Tables:
-- Public Route Table associated to the public subnet:
+#### Public Route Table associated to the public subnet:
 
 | Destination        | Target                 | Status   | Propagated  |      
 | ------------------ | ---------------------- | -------- | ----------- |
 | `VPC IPv4 CIDR`    | local                  | active   | No          |
 | 0.0.0.0/0          | `IGW id`               | active   | No          |
 
-- Private Route Table associated to the private subnet:
+#### Private Route Table associated to the private subnet:
 
 | Destination        | Target                 | Status   | Propagated  |        
 | ------------------ | ---------------------- | -------- | ----------- |
@@ -53,22 +53,19 @@ Create 2 Route Tables:
 
 ### 7. Security Groups
 Create 3 Security Groups and associate each one to its corresponding instance:
-- **Jumpbox Security Group**:
-  - Inbound rules:
-
+#### **Jumpbox Security Group**:
+##### Inbound rules:
 | Type            | Protocol   | Port Range  | Source             |
 | --------------- | ---------- | ----------- | ------------------ |
 | SSH             | TCP        | 22          | 0.0.0.0/0          |
 
-  - Outbound rules:
-
+##### Outbound rules:
 | Type            | Protocol   | Port Range  | Destination        |
 | --------------- | ---------- | ----------- | ------------------ |
 | All traffic     | All        | All         | 0.0.0.0/0          |
 
-- **NAT instance Security Group**:
-  - Inbound rules:
-
+#### **NAT instance Security Group**:
+##### Inbound rules:
 | Type            | Protocol   | Port Range  | Source             |
 | --------------- | ---------- | ----------- | ------------------ |
 | SSH             | TCP        | 22          | `VPC IPv4 CIDR`    |
@@ -76,21 +73,18 @@ Create 3 Security Groups and associate each one to its corresponding instance:
 | HTTPS           | TCP        | 443         | `VPC IPv4 CIDR`    |
 | All ICMP-IPv4   | All        | N/A         | `VPC IPv4 CIDR`    |
 
-  - Outbound rules:
-
+##### Outbound rules:
 | Type            | Protocol   | Port Range  | Destination        |
 | --------------- | ---------- | ----------- | ------------------ |
 | All traffic     | All        | All         | 0.0.0.0/0          |
 
-- **Final Instance Security Group**:
-  - Inbound rules:
-
+#### **Final Instance Security Group**:
+##### Inbound rules:
 | Type            | Protocol   | Port Range  | Source             |
 | --------------- | ---------- | ----------- | ------------------ |
 | SSH             | TCP        | 22          | `VPC IPv4 CIDR`    |
 
-  - Outbound rules:
-
+##### Outbound rules:
 | Type            | Protocol   | Port Range  | Destination        |
 | --------------- | ---------- | ----------- | ------------------ |
 | All traffic     | All        | All         | 0.0.0.0/0          |
