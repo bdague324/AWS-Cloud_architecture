@@ -41,7 +41,7 @@ Create 2 Route Tables:
 
 | Destination        | Target                 | Status   | Propagated  |      
 | ------------------ | ---------------------- | -------- | ----------- |
-| *VPC IPv4 CIDR*    | local                  | active   | No          |
+| *'<VPC IPv4 CIDR*    | local                  | active   | No          |
 | 0.0.0.0/0          | *IGW id*               | active   | No          |
 
 - Private Route Table associated to the private subnet:
