@@ -38,10 +38,10 @@ Create 2 Elastic IPs and assign each of them to the 2 instances in the public su
 ### 6. Route Tables
 Create 2 Route Tables:
 - Public Route Table associated to the public subnet:
-| Destination        |Target                |Status  |Propagated |      
-| ------------------ |----------------------|--------|-----------|
-| *<VPC IPv4 CIDR>*  |local                 |active  |No         |
-| 0.0.0.0/0          |*<IGW id>*            |active  |No         |
+| Destination        | Target                 | Status   | Propagated  |      
+| ------------------ | ---------------------- | -------- | ----------- |
+| *<VPC IPv4 CIDR>*  | local                  | active   | No          |
+| 0.0.0.0/0          | *<IGW id>*             | active   | No          |
 
 - Private Route Table associated to the private subnet:
   Destination       |Target              |Status |Propagated        
