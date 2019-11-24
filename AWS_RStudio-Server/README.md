@@ -1,6 +1,6 @@
 # RStudio Server setup on AWS Cloud
 
-## Objective: install a RStudio Server on AWS and access it via Ubuntu console.
+## Objective: install a RStudio Server on AWS and access it on Web browser.
 
 ## Environment requirements:
 - 1 VPC
@@ -91,7 +91,7 @@ sudo useradd <username>
 echo <username>:<password> | sudo chpasswd
 ```
 ### Connect to your RStudio Server
-- Go to browser and enter <Server public IPv4>:8787
+- Go to Web browser and enter *Server public IPv4*:8787
 
 ![RStudio_auth](https://github.com/lisakoppe/AWS-Cloud_architecture/blob/master/AWS_RStudio-Server/Screenshots/RStudio_auth-sign-in.PNG)
 
@@ -101,4 +101,4 @@ echo <username>:<password> | sudo chpasswd
 
 Read more about running R on AWS [here](https://aws.amazon.com/blogs/big-data/running-r-on-aws/).
 
-### Download and install R and RStudio Server at launch: [script]()
+### Download and install R and RStudio Server at launch: [script here](https://github.com/lisakoppe/AWS-Cloud_architecture/blob/master/AWS_RStudio-Server/Install_at_launch_script).

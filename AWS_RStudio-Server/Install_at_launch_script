@@ -1,21 +1,13 @@
-#Go to <KeyPair.pem> location on local directory
-cd /mnt/c/Users/Lisa/AWS
+#Update the package manager
+sudo yum update -y
 
-#Copy <KeyPair.pem> file to Ubuntu home directory and then change directory
-cp -i <KeyPair.pem> ~
-cd ~
-ls
+#Install R
+sudo amazon-linux-extras install R3.4 -y
 
-#Use SSH-agent to allow instances to access <KeyPair.pem>
-chmod 600 <KeyPair.pem>
-eval `ssh-agent -s`
-ssh-add <KeyPair.pem>
+#Download and install RStudio Server (for Red Hat / CentOS 6-7)
+wget https://download2.rstudio.org/server/centos6/x86_64/rstudio-server-rhel-1.2.5019-x86_64.rpm
+sudo yum -y install rstudio-server-rhel-1.2.5019-x86_64.rpm
 
-#Connect to Jumpbox instance
-ssh -A ec2-user@<Jumpbox public IP>
-
-#Connect to Final instance
-ssh ec2-user@<FI private IP>
-
-#Run test via pinging google.com
-ping google.com
+#Create user (username and password)
+sudo useradd <username>
+echo <username>:<password> | sudo chpasswd
