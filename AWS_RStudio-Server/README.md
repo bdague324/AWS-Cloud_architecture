@@ -11,7 +11,7 @@
 - 1 Security group
 
 ## Architecture
-![Architecture_diagram]()
+![Architecture_diagram](https://github.com/lisakoppe/AWS-Cloud_architecture/blob/master/AWS_RStudio-Server/Screenshots/Architecture_diagram.PNG)
 
 ## Steps to create the architecture:
 ### 1. VPC
