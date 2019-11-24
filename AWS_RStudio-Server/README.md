@@ -36,7 +36,7 @@ Create 1 Route Table:
 ### 5. EC2 instance
 Create an instance: **RStudio_Server** *(public)* with type Amazon Linux 2 AMI HVM and enable Auto-assign Public IP to avoid EIP creation (no flexibility needed here).
 
-![RStudio_Server](X)
+![RStudio_Server](https://github.com/lisakoppe/AWS-Cloud_architecture/blob/master/AWS_RStudio-Server/Screenshots/RStudio_Server.PNG)
 
 Configure the associated security group as follows:
 ##### Inbound rules:
@@ -69,6 +69,8 @@ Configure the associated security group as follows:
   ```
   ssh -i <"KeyPair.pem"> ec2-user@<RStudio_Server public IP>
   ```
+![Ubuntu_console](https://github.com/lisakoppe/AWS-Cloud_architecture/blob/master/AWS_RStudio-Server/Screenshots/Ubuntu_console.PNG)
+
 ### Configure RStudio Server
 - Update the package manager
   ```
@@ -91,10 +93,12 @@ echo <username>:<password> | sudo chpasswd
 ### Connect to your RStudio Server
 - Go to browser and enter <Server public IPv4>:8787
 
-![RStudio_Server](X)
+![RStudio_auth](https://github.com/lisakoppe/AWS-Cloud_architecture/blob/master/AWS_RStudio-Server/Screenshots/RStudio_auth-sign-in.PNG)
 
 - Log in with the username and password created
 
-![RStudio_Server](X)
+![RStudio_Server-online](https://github.com/lisakoppe/AWS-Cloud_architecture/blob/master/AWS_RStudio-Server/Screenshots/RStudio_Server-online.PNG)
 
 Read more about running R on AWS [here](https://aws.amazon.com/blogs/big-data/running-r-on-aws/).
+
+### Download and install R and RStudio Server at launch: [script]()

@@ -1,0 +1,21 @@
+#Go to <KeyPair.pem> location on local directory
+cd /mnt/c/Users/Lisa/AWS
+
+#Copy <KeyPair.pem> file to Ubuntu home directory and then change directory
+cp -i <KeyPair.pem> ~
+cd ~
+ls
+
+#Use SSH-agent to allow instances to access <KeyPair.pem>
+chmod 600 <KeyPair.pem>
+eval `ssh-agent -s`
+ssh-add <KeyPair.pem>
+
+#Connect to Jumpbox instance
+ssh -A ec2-user@<Jumpbox public IP>
+
+#Connect to Final instance
+ssh ec2-user@<FI private IP>
+
+#Run test via pinging google.com
+ping google.com
