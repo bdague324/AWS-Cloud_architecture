@@ -7,7 +7,6 @@
 - 1 public subnet in one Availability Zone
 - 1 Internet Gateway associated with the public subnet
 - 1 Amazon EC2 instance (RStudio_Server)
-- 1 EIP
 - 1 Route table
 - 1 Security group
 
