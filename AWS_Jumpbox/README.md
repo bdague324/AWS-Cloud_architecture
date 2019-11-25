@@ -125,6 +125,7 @@ Create 3 Security Groups and associate each one to its corresponding instance:
   ```
   ping google.com
   ```
+  
 Find script here: [Test_Connection_Script](https://github.com/lisakoppe/AWS-Cloud_architecture/blob/master/AWS_Jumpbox/Test_Connection_Script)
 
 ![Ubuntu_console_screenshot](https://github.com/lisakoppe/AWS-Cloud_architecture/blob/master/AWS_Jumpbox/Screenshots/Ubuntu_console_screenshot.PNG)

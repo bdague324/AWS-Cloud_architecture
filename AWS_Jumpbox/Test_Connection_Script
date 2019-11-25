@@ -1,7 +1,7 @@
 #Go to <KeyPair.pem> location on local directory
 cd /mnt/c/Users/Lisa/AWS
 
-#Copy <KeyPair.pem> file to Ubuntu home directory and then change directory
+#Copy <KeyPair.pem> file to Linux Ubuntu home directory and then change directory
 cp -i <KeyPair.pem> ~
 cd ~
 ls
