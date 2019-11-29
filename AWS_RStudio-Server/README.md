@@ -98,6 +98,7 @@ echo <username>:<password> | sudo chpasswd
 
 ![RStudio_Server-online](https://github.com/lisakoppe/AWS-Cloud_architecture/blob/master/AWS_RStudio-Server/Screenshots/RStudio_Server-online.PNG)
 
+
 Read more about running R on AWS [here](https://aws.amazon.com/blogs/big-data/running-r-on-aws/).
 
 ### Download and install R and RStudio Server at launch: [script here](https://github.com/lisakoppe/AWS-Cloud_architecture/blob/master/AWS_RStudio-Server/Install_at_launch_script).
