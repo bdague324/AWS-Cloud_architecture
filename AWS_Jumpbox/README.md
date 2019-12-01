@@ -28,15 +28,15 @@ Create an Internet Gateway and attach it to the VPC.
 
 ### 4. EC2 instances
 Create 3 instances:
-- **Jumpbox** *(public)* type Amazon Linux 2 AMI HVM
+- **Jumpbox** *(public)* type Amazon Linux 2 AMI HVM *(ami-00068cd7555f543d5)*.
 
 ![Jumpbox_instance](https://github.com/lisakoppe/AWS-Cloud_architecture/blob/master/AWS_Jumpbox/Screenshots/Jumpbox_instance.PNG)
 
-- **NAT instance** *(public)* amzn-ami-vpc-nat community AMI and disable Change Source/Dest. Check (Actions > Networking > Change Source/Dest. Check > Yes, Disable)
+- **NAT instance** *(public)* amzn-ami-vpc-nat *(ami-00a9d4a05375b2763)* community AMI and **disable Change Source/Dest**. Check (Actions > Networking > Change Source/Dest. Check > Yes, Disable)
 
 ![NAT_instance](https://github.com/lisakoppe/AWS-Cloud_architecture/blob/master/AWS_Jumpbox/Screenshots/NAT_instance.PNG)
 
-- **Final Instance** *(private)* type Amazon Linux 2 AMI HVM
+- **Final Instance** *(private)* type Amazon Linux 2 AMI HVM *(ami-00068cd7555f543d5)*.
 
 ![Final_instance](https://github.com/lisakoppe/AWS-Cloud_architecture/blob/master/AWS_Jumpbox/Screenshots/FI_instance.PNG)
 
@@ -54,10 +54,10 @@ Create 2 Route Tables:
 
 #### Private Route Table associated to the private subnet:
 
-| Destination        | Target                 | Status   | Propagated  |        
-| ------------------ | ---------------------- | -------- | ----------- |
-| `VPC IPv4 CIDR`    | local                  | active   | No          |
-| 0.0.0.0/0          | `NAT instance id`      | active   | No          |
+| Destination        | Target                       | Status   | Propagated  |        
+| ------------------ | ---------------------------- | -------- | ----------- |
+| `VPC IPv4 CIDR`    | local                        | active   | No          |
+| 0.0.0.0/0          | `eni (NAT) instance id`      | active   | No          |
 
 ### 7. Security Groups
 Create 3 Security Groups and associate each one to its corresponding instance:
@@ -74,12 +74,9 @@ Create 3 Security Groups and associate each one to its corresponding instance:
 
 #### **NAT instance Security Group**:
 ##### Inbound rules:
-| Type            | Protocol   | Port Range  | Source             |
-| --------------- | ---------- | ----------- | ------------------ |
-| SSH             | TCP        | 22          | `VPC IPv4 CIDR`    |
-| HTTP            | TCP        | 80          | `VPC IPv4 CIDR`    |
-| HTTPS           | TCP        | 443         | `VPC IPv4 CIDR`    |
-| All ICMP-IPv4   | All        | N/A         | `VPC IPv4 CIDR`    |
+| Type            | Protocol   | Port Range  | Source               |
+| --------------- | ---------- | ----------- | -------------------- |
+| All traffic     | All        | 0 - 65535   | `SG Final instance`  |
 
 ##### Outbound rules:
 | Type            | Protocol   | Port Range  | Destination        |
@@ -90,7 +87,7 @@ Create 3 Security Groups and associate each one to its corresponding instance:
 ##### Inbound rules:
 | Type            | Protocol   | Port Range  | Source             |
 | --------------- | ---------- | ----------- | ------------------ |
-| SSH             | TCP        | 22          | `VPC IPv4 CIDR`    |
+| SSH             | TCP        | 22          | `SG Jumpbox`       |
 
 ##### Outbound rules:
 | Type            | Protocol   | Port Range  | Destination        |
@@ -125,7 +122,7 @@ Create 3 Security Groups and associate each one to its corresponding instance:
   ```
   ping google.com
   ```
-  
+
 Find script here: [Test_Connection_Script](https://github.com/lisakoppe/AWS-Cloud_architecture/blob/master/AWS_Jumpbox/Test_Connection_Script)
 
 ![Ubuntu_console_screenshot](https://github.com/lisakoppe/AWS-Cloud_architecture/blob/master/AWS_Jumpbox/Screenshots/Ubuntu_console_screenshot.PNG)
