@@ -35,7 +35,7 @@ Create two public subnets linked to the VPC with <IP>/24 IPv4 CIDR block in two 
 | 0.0.0.0/0          | `IGW id`               | active   | No          |
 
 ### 5. Security Group
-Create a Security Group and associate it to X:
+Create a Security Group:
 ##### Inbound rules:
 | Type            | Protocol   | Port Range  | Source             |
 | --------------- | ---------- | ----------- | ------------------ |
