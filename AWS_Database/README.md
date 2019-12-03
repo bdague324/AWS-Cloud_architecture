@@ -53,6 +53,7 @@ Select "EC2 instance" and then select "Administrator Access" in the permissions 
 ### 7. RDS instance & database
 Go to the RDS service page and click on "create database".
 Then setup your database as follows:
+
 | Parameter                    | Value                                       |
 | ---------------------------- | ------------------------------------------- |
 | Database creation method     | Standard Create                             |
