@@ -52,6 +52,7 @@ Configure the associated security group as follows:
 - Open PuTTYgen and load an existing .pem private key file
 - Save your newly created .ppk private key file
 - Close PuTTY Key Generator
+
 ![PuTTYgen](https://github.com/lisakoppe/AWS-Cloud_architecture/blob/master/AWS_Jupyter-Server/Screenshots/PuTTYgen.PNG)
 
 ### Connect to Jupyter Server using PuTTY:
@@ -61,6 +62,7 @@ Configure the associated security group as follows:
 - In the left pane, go to `Connection > SSH > Auth` and load the .ppk private key file for authentification
 - Go back to "Session" and click on "Save"
 - Click on "Open" to connect to the Jupyter Server
+
 ![PuTTY](https://github.com/lisakoppe/AWS-Cloud_architecture/blob/master/AWS_Jupyter-Server/Screenshots/PuTTY.PNG)
 
 ### Configure Jupyter Server
@@ -78,17 +80,22 @@ Configure the associated security group as follows:
   ```
   Python starts running when it shows ">>>".
   Quit Python with `exit()`
+
 - Test Python by executing a small script in in Ubuntu console:
   - Open a notepad, write a small Python and save it with .py extension
   - Upload the Python script to the distant machine: open WinSCP, go to `Tools > Import sites > Jupyter_server` and press "Login". Then drag and drop the Python script file to your distant machine (in the right pane).
+
   ![WinSCP](https://github.com/lisakoppe/AWS-Cloud_architecture/blob/master/AWS_Jupyter-Server/Screenshots/WinSCP.PNG)
+
   - Go to Ubuntu console and execute the Python script: `python 3 myscript.py`. The script result appears on the console.
   - Quit Python3 coding console with `exit()`
+
 - Install pip installer
   ```
   sudo apt-get install python3-pip -y
   ```
   Check the version of pip with `pip3 --version`
+
 - Install Jupyter
   ```
   sudo pip3 install jupyter
@@ -99,8 +106,10 @@ Configure the associated security group as follows:
   ```
 
 ### Connect to Jupyter Server using browser
-- Copy URL of the Jupyter Notebook in the Ubuntu console `http://ip-10-0-1-216:8888/?token=164f3a4db9a19af43bd65e4124ed1fd739bc182f0d6faab0`
-- Replace the IP with the public IPv4 of the **Jupyter_server** instance and paste it to the browser page: `http://54.197.70.222:8888/?token=164f3a4db9a19af43bd65e4124ed1fd739bc182f0d6faab0`
+- Copy URL of the Jupyter Notebook in the Ubuntu console
+`http://ip-10-0-1-216:8888/?token=164f3a4db9a19af43bd65e4124ed1fd739bc182f0d6faab0`
+- Replace the IP with the public IPv4 of the **Jupyter_server** instance and paste it to the browser page:
+`http://54.197.70.222:8888/?token=164f3a4db9a19af43bd65e4124ed1fd739bc182f0d6faab0`
 Your are now connected to your Jupyter Server.
 
 ![Jupyter_Server](https://github.com/lisakoppe/AWS-Cloud_architecture/blob/master/AWS_Jupyter-Server/Screenshots/Jupyter_Server.PNG)
