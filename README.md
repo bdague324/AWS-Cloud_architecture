@@ -7,3 +7,4 @@ This repository gathers projects using AWS Cloud:
 3. [RStudio Server setup](https://github.com/lisakoppe/AWS-Cloud_architecture/tree/master/AWS_RStudio-Server)
 4. [Webservice deployment with encryption](https://github.com/lisakoppe/AWS-Cloud_architecture/tree/master/AWS_Webservice_secure_deployment) *coming soon*
 5. [Database creation using RDS instance](https://github.com/lisakoppe/AWS-Cloud_architecture/tree/master/AWS_Database)
+6. [Jupyter Server setup](https://github.com/lisakoppe/AWS-Cloud_architecture/tree/master/AWS_Jupyter-server)
