@@ -110,6 +110,7 @@ Configure the associated security group as follows:
 `http://ip-10-0-1-216:8888/?token=164f3a4db9a19af43bd65e4124ed1fd739bc182f0d6faab0`
 - Replace the IP with the public IPv4 of the **Jupyter_server** instance and paste it to the browser page:
 `http://54.197.70.222:8888/?token=164f3a4db9a19af43bd65e4124ed1fd739bc182f0d6faab0`
+
 You are now connected to your Jupyter Server.
 
 ![Jupyter_Server](https://github.com/lisakoppe/AWS-Cloud_architecture/blob/master/AWS_Jupyter-Server/Screenshots/Jupyter_Server.PNG)
