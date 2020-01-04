@@ -148,6 +148,8 @@ See part 5 of [AWS_Jupyter-Server](https://github.com/lisakoppe/AWS-Cloud_archit
   ```
 - Copy the **Front End Server public IP address** and paste it to the Web browser. You should then have access to Apache 2 documentation.
 
+![Apache2](https://github.com/lisakoppe/AWS-Cloud_architecture/blob/master/AWS_MNIST-Prediction/Screenshots/Apache2.PNG)
+
 #### OPTIONAL: clone a repository
 Clone a repository to get some useful files.
 
@@ -169,12 +171,13 @@ The WebApp components will now be placed on the Front End Server to display the 
   ```
 - Move the static folder
   ```
-  sudo mv AWS_Tutorials/MNIST/
   sudo mv AWS_Tutorials/MNIST/static/ /var/www/html/
   ```
 - Refresh the Web page with the **Front End Server public IP address**.
 
 #### The WebApp is now displayed on the screen.
+
+![WebApp](https://github.com/lisakoppe/AWS-Cloud_architecture/blob/master/AWS_MNIST-Prediction/Screenshots/WebApp.PNG)
 
 ### 7. Back End Server instance
 #### Create the instance on AWS:
