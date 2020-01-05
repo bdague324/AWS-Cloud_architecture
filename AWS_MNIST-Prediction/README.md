@@ -98,13 +98,13 @@ Once you activated your new environment, you can clone a repository to get some 
   ```
 - Clone a repository from GitHub
   ```
-  git clone https://github.com/leodsti/AWS_Tutorials.git
+  git clone https://github.com/lisakoppe/AWS-Cloud_architecture.git
   ```
 
 #### Install packages
 - Install all the packages listed in the `requirements.txt` file
   ```
-  pip install -r AWS_Tutorials/MNIST/requirements.txt
+  pip install -r AWS-Cloud_architecture/AWS_MNIST-Prediction/requirements.txt
   ```
 
 #### Train the model
@@ -159,7 +159,7 @@ Clone a repository to get some useful files.
   ```
 - Clone a repository from GitHub
   ```
-  git clone https://github.com/leodsti/AWS_Tutorials.git
+  git clone https://github.com/lisakoppe/AWS-Cloud_architecture.git
   ```
 
 #### Deploy the WebApp
@@ -167,11 +167,11 @@ The WebApp components will now be placed on the Front End Server to display the 
 
 - Move the index.html file
   ```
-  sudo mv AWS_Tutorials/MNIST/index.html /var/www/html/
+  sudo mv AWS-Cloud_architecture/AWS_MNIST-Prediction/index.html /var/www/html/
   ```
 - Move the static folder
   ```
-  sudo mv AWS_Tutorials/MNIST/static/ /var/www/html/
+  sudo mv AWS-Cloud_architecture/AWS_MNIST-Prediction/static/ /var/www/html/
   ```
 - Refresh the Web page with the **Front End Server public IP address**.
 
@@ -254,7 +254,7 @@ See [AWS_Jupyter-Server](https://github.com/lisakoppe/AWS-Cloud_architecture/tre
   ```
 - Install all the packages listed in the `requirements.txt` file
   ```
-  pip install -r AWS_Tutorials/MNIST/requirements.txt
+  pip install -r AWS-Cloud_architecture/AWS_MNIST-Prediction/requirements.txt
   ```
 
 #### OPTIONAL: clone a repository
@@ -266,7 +266,7 @@ Clone a repository to get some useful files.
   ```
 - Clone a repository from GitHub
   ```
-  git clone https://github.com/leodsti/AWS_Tutorials.git
+  git clone https://github.com/lisakoppe/AWS-Cloud_architecture.git
   ```
 
 #### Build the API and launch Flask to access the prediction
@@ -293,15 +293,12 @@ Tips: navigate with the arrows, type 'i' enter insert mode, press 'ctrl+c' and t
   cd /var/www/html/
   sudo vi keras_flask.py
   ```
-- Insert code
-  ```
-  from flask_cors import CORS
-  app = Flask(__name__)
-  cors = CORS(app, resources={r"*": {"origins": "*"}})
-  ```
+
 
 
 
 
 #### Access the WebApp and make the prediction
-Go to the Web browser and type http://`Front End Public IPv4`:5000/predict/
+Go to Web browser and enter `Front End Public IPv4`. Draw a digit and hit the *Predict* button. Predicted result based on the trained CNN model is displayed on screen as follows.
+
+![Prediction](https://github.com/lisakoppe/AWS-Cloud_architecture/blob/master/AWS_MNIST-Prediction/Screenshots/Prediction.PNG)
