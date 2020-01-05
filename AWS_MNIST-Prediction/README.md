@@ -190,6 +190,7 @@ Configure the associated security group as follows:
 | Type            | Protocol   | Port Range  | Source             |
 | --------------- | ---------- | ----------- | ------------------ |
 | SSH             | TCP        | 22          | 0.0.0.0/0          |
+| Custom TCP Rule | TCP        | 8888        | 0.0.0.0/0, ::/0    |
 | Custom TCP Rule | TCP        | 5000        | 0.0.0.0/0, ::/0    |
 
 ##### Outbound rules:
@@ -214,7 +215,6 @@ See part 5 of [AWS_Jupyter-Server](https://github.com/lisakoppe/AWS-Cloud_archit
   ```
   wget https://repo.anaconda.com/archive/Anaconda3-2019.10-Linux-x86_64.sh
   sudo bash Anaconda3-2019.10-Linux-x86_64.sh -u #answer yes to all questions
-  export PATH=~/anaconda3/bin:$PATH #try conda command. To be used if conda command is not found after installation
   ```
 - Bind to any ip
   ```
@@ -247,7 +247,6 @@ See [AWS_Jupyter-Server](https://github.com/lisakoppe/AWS-Cloud_architecture/tre
 - Install OpenCV Computer Vision Library
   ```
   conda install opencv
-  (pip install python3-opencv) to check
   ```
 - Install Flask CORS
   ```
