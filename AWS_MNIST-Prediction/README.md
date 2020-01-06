@@ -95,6 +95,8 @@ Once you activated your new environment, you can clone a repository to get some 
 #### Train the model
 The training is based on **60,000 images** and testing is performed on **10,000 images**.
 
+![Model training](https://github.com/lisakoppe/AWS-Cloud_architecture/blob/master/AWS_MNIST-Prediction/Screenshots/trainingmodel.gif)
+
 - Go to your Jupyter Notebook in your Web browser and open the `MNIST_CNN.ipynb` file (previously cloned)
 - Execute all the cells until cell 9 to train the model with 10 epochs (note that it may take approximately 10 minutes)
 - Run cell 10 to save the model as `cnn-mnist`
