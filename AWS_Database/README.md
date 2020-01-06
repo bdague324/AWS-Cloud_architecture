@@ -14,6 +14,7 @@
 - 1 Route table
 
 ## Architecture
+![Architecture_diagram](https://github.com/lisakoppe/AWS-Cloud_architecture/blob/master/AWS_Database/Screenshots/Architecture_diagram.png)
 
 ## Steps to create the architecture:
 ### 1. VPC
@@ -80,6 +81,7 @@ Then setup your database as follows:
 Note that a pop-up window will appear showing the following statement "Successfully made the MySQL connection".
 
 ### 9. Create EC2 instance with IAM role
+Create an instance: **Name** *(public)* with type Amazon Linux 2 AMI HVM *(ami-00068cd7555f543d5)* and enable Auto-assign Public IP to avoid EIP creation (no flexibility needed here).
 
 ### 10. Connect to database using Python
 
