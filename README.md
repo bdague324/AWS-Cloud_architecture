@@ -8,6 +8,7 @@ This repository gathers projects using AWS Cloud:
 #### 3. [Database creation using RDS instance](https://github.com/lisakoppe/AWS-Cloud_architecture/tree/master/AWS_Database)
 #### 4. [Jupyter Server setup](https://github.com/lisakoppe/AWS-Cloud_architecture/tree/master/AWS_Jupyter-Server)
 #### 5. [MNIST handwritten digits recognition model training and deployment](https://github.com/lisakoppe/AWS-Cloud_architecture/tree/master/AWS_MNIST-Prediction)
+#### 6. [Amazon Rekognition API](https://github.com/lisakoppe/AWS-Cloud_architecture/tree/master/AWS_Rekognition-API)
 
 
 *Many thanks to Dr Léo Souquet for generously sharing his knowledge and experiences.*
