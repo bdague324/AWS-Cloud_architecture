@@ -1,0 +1,3 @@
+# Amazon Rekognition API
+
+## Objective:
