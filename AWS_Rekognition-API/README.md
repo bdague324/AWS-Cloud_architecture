@@ -88,7 +88,7 @@ Once you activated your new environment, you can clone a repository to get some 
 
 #### Run the AWS Rekognition API on a picture
 Make sure to save a photo to your current directory and to make the following changes in the python [reko.py](https://github.com/lisakoppe/AWS-Cloud_architecture/blob/master/AWS_Rekognition-API/reko.py) script:
-- Change the picture's nameo
+- Change the picture's name
 - Change the AWS credentials (access key id and secret access key)
 
 Run the python [reko.py](https://github.com/lisakoppe/AWS-Cloud_architecture/blob/master/AWS_Rekognition-API/reko.py) script and then check the label recognized.
